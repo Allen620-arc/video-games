@@ -88,6 +88,15 @@ function updateInventoryUI() {
   }
 }
 
+function useItem(item) {
+  if (item === "Glowing Stone") {
+    removeFromInventory(item);
+    showScene("endPower");
+  } else {
+    alert(`Nothing happens when you use the ${item}.`);
+  }
+}
+
 function showScene(sceneKey) {
   const scene = scenes[sceneKey];
   textElement.textContent = scene.text;
@@ -104,6 +113,8 @@ function showScene(sceneKey) {
     button.onclick = () => showScene(choice.next);
     choicesElement.appendChild(button);
   });
+
+  updateInventoryUI();
 }
 
 showScene("start");
