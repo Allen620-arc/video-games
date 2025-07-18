@@ -54,7 +54,7 @@ function updateInventoryUI() {
 function useItem(item) {
   if (item === "Glowing Stone") {
     removeFromInventory(item);
-    showScene("endPower");
+    showScene("defeatBeast");
   } else {
     alert(`Nothing happens when you use the ${item}.`);
   }
